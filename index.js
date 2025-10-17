@@ -1,13 +1,19 @@
 const http = require('http');
+const {handleRoutes} = require('./app/routes/routes');
 
-const server = http.createServer((req, res) => {
-        res.writeHead(200, {
-            'Content-Type' : 'text/plain; charset = UTF-8'
-    });
-        res.end('Servidor Node.js está funcionando');
-    });
+const server = http.createServer((req,res) =>{
+    console.log(
+        new Date().toISOString(),
+        req.method,
+        req.url
+    );
 
-    server.listen(3000, ()=> {
-        console.log('O servidor está rodando em http://localhost:3000');
-    });
+    handleRoutes(req,res);
+});
+
+const PORT = 3000;
+server.listen(PORT, () => {
+console.log('Servidor rodando em http://localhost:' + PORT);
+});
+
 

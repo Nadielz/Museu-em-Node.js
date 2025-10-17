@@ -1,0 +1,29 @@
+function handleRoutes(req,res){
+    const url = new URL(req.url, 'http://' + req.headers.host);
+    const path = url.pathname;
+    const method = req.method;
+
+    res.setHeader('Content-Type','text/plain;charset=utf-8');
+
+    if(path === '/' && method ==='GET'){
+        return res.end('Página Inicial');
+    }
+
+    if(path === '/sobre' && method ==='GET'){
+        return res.end('Sobre nós');
+    }
+
+    if(path === '/contato' && method ==='POST'){
+        let body = '';
+        req.on('data', chunk => (body += chunks));
+        req.on('end', () => {
+            return res.end('Dados recebidos: ' + body);
+        });
+    return;
+    }
+
+    res.statusCode = 404;
+    return res.end('Rota não encontrada');
+}
+
+module.exports = { handleRoutes };
