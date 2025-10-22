@@ -1,4 +1,6 @@
-function handleRoutes(req,res){
+
+//Forma Original com HandleRoutes
+/* function handleRoutes(req,res){
     const url = new URL(req.url, 'http://' + req.headers.host);
     const path = url.pathname;
     const method = req.method;
@@ -22,8 +24,18 @@ function handleRoutes(req,res){
     return;
     }
 
+    if(path === '/api' && method === 'GET'){
+        res.setHeader('Content-Type','application/json; charset=utf-8');
+
+        return res.end(JSON.stringify({
+            ok: true,
+            mensagem: 'Hello API',
+            timestamp: Date.now()
+        }));
+    }
+    
     res.statusCode = 404;
     return res.end('Rota não encontrada');
 }
 
-module.exports = { handleRoutes };
+module.exports = { handleRoutes }; */
