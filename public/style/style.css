@@ -1,0 +1,89 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: #004d7a;
+  color: white;
+  padding: 20px;
+}
+
+a {
+  color: #004d7a;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   Página Home
+   =========================== */
+.home-main {
+  text-align: center;
+  padding: 40px;
+}
+
+.home-main nav a {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #004d7a;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.home-main nav a:hover {
+  background-color: #004d7a;
+  color: white;
+}
+
+/* ===========================
+   Página Tarsila
+   =========================== */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;   /* caixa padronizada */
+  object-fit: contain;   /* NÃO corta nem distorce */
+  background: #fff;      /* “borda” neutra quando sobrar espaço */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 6px;          /* espaço entre imagem e a borda branca */
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+nav {
+  text-align: center;
+  margin: 30px 0;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: #004d7a;
+  color: white;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #0073b1;
+}
